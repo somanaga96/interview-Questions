@@ -1,4 +1,5 @@
-1)Selection the option without Select Class
+1)Select the option without Select Class
+
 Ans : 
 driver.get("https://letcode.in/dropdowns");
         WebElement state = driver.findElement(By.cssSelector("select#fruits"));
