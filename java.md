@@ -3,6 +3,7 @@ When the JVM Terminates Abruptly
 If the Java Virtual Machine (JVM) is forcibly terminated (e.g., using System.exit()), the finally block will not execute.
 
 
+```java
 public class Test {
     public static void main(String[] args) {
         try {
@@ -12,4 +13,4 @@ public class Test {
             System.out.println("Finally block");
         }
     }
-}
+}```
