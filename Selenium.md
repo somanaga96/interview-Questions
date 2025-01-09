@@ -1,11 +1,6 @@
 ## Table of Contents
 1. [Select Option Without Select Class](#1-select-option-without-select-class)
 2. [Common Selenium Exceptions](#2-common-selenium-exceptions)
-    - [NoSuchElementException](#nosuchelementexception)
-    - [ElementNotVisibleException](#elementnotvisibleexception)
-    - [TimeoutException](#timeoutexception)
-3. [Overcoming Stale Element Exception](#3-overcoming-stale-element-exception)
-4. [Handling Exceptions in Selenium](#4-handling-exceptions-in-selenium)
 
 ### 1 **Select the option without Select Class**
 
