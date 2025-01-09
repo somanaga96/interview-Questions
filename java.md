@@ -1,6 +1,6 @@
 
 ## Table of Contents
-1. [Select Option Without Select Class](#1-Scenarios Where finally Block Can Be Skipped)
+1. [Scenarios Where finally Block Can Be Skipped](#1-can-finally-block-can-skip)
 ### 1. **Scenarios Where finally Block Can Be Skipped**
  
 When the JVM Terminates Abruptly
