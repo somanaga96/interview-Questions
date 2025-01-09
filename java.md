@@ -17,4 +17,9 @@ public class Test {
             System.out.println("Finally block");
         }
     }
-}```
+}
+```
+### 2. **Abstract**
+**Defination :** Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+**RULE**
+A class that is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body).
