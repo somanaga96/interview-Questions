@@ -3,7 +3,8 @@
 1. [Scenarios Where finally Block Can Be Skipped](#1-can-finally-block-can-skip)
 2. [Class and Object](#2-class-and-object)
 3. [Abstract](#3-abstract)
-4. [Encapsulation](#4-encapsulation)
+4. [DOwnCast and UpCast](#4-Downcast-UpCast)
+5. [Encapsulation](#5-encapsulation)
 ### 1. **Scenarios Where finally Block Can Be Skipped**
  
 When the JVM Terminates Abruptly
@@ -83,7 +84,7 @@ public class Test {
     }
 }
 ```
-### 4. **Encapsulation**
+### 5. **Encapsulation**
 Key Points of Encapsulation in Java:
 
 
