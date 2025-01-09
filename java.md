@@ -1,7 +1,8 @@
 
 ## Table of Contents
 1. [Scenarios Where finally Block Can Be Skipped](#1-can-finally-block-can-skip)
-2. [Abstract](#1-abstract)
+2. [Class and Object](#2-class-and-object)
+3. [Abstract](#1-abstract)
 ### 1. **Scenarios Where finally Block Can Be Skipped**
  
 When the JVM Terminates Abruptly
@@ -20,7 +21,12 @@ public class Test {
     }
 }
 ```
-### 2. **Abstract**
+### 2. **Class and Object**
+1. A class is like a blueprint for a house.
+2. An object is like an actual house built using that blueprint
+
+   
+### 3. **Abstract**
 **Defination :** Abstraction is a process of hiding the implementation details and showing only functionality to the user.
 **Eg " : In ATM showing option as Account balance check, money withdraw to end user. But **NOT**  showing the method implementation to end user.
 
@@ -31,10 +37,9 @@ public class Test {
 
 **Ways to achieve Abstraction**
 
-
-1. There are two ways to achieve abstraction in Java:
-2. Using Abstract Class (0 to 100%)
-3. Using Interface (100%
+ There are two ways to achieve abstraction in Java:
+1. Using Abstract Class (0 to 100%)
+2. Using Interface (100%
 
 Example :
 ```java
@@ -49,3 +54,4 @@ public static void main(String args[]){
 }  
 }
 ```
+
