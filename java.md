@@ -26,8 +26,8 @@ public class Test {
 
 **RULE**
 
-A class that is declared with the abstract keyword is known as an abstract class in Java.
-It can have abstract and non-abstract methods (method with the body).
+1. A class that is declared with the abstract keyword is known as an abstract class in Java.
+2. It can have abstract and non-abstract methods (method with the body).
 
 **Ways to achieve Abstraction**
 
