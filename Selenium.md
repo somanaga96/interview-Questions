@@ -106,8 +106,56 @@ try {
 }
 ```
 
-### 2 **how to overcome stale element exception in selenium java**
+### 2) **how to overcome stale element exception in selenium java**
 **occurs when**
 The page being refreshed.
 Elements being dynamically updated or re-rendered.
 Navigation to a new page or frame.
+**solution**
+A. Relocate the Element
+When the DOM changes, the reference to the element becomes stale. To fix this, locate the element again before interacting with it.
+
+Example:
+
+```java
+WebElement element = driver.findElement(By.id("myElement"));
+// Perform some actions that update the DOM
+try {
+    element.click(); // This may throw StaleElementReferenceException
+} catch (StaleElementReferenceException e) {
+    element = driver.findElement(By.id("myElement")); // Relocate the element
+    element.click();
+}
+```
+B. Use a WebDriverWait
+Using WebDriverWait ensures that the element is re-located or is in a stable state before interacting with it.
+
+Example:
+
+```java
+Copy code
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("myElement")));
+
+// Perform actions on the element
+element.click();
+```
+
+C. Handle with Retry Logic
+If you suspect the DOM is unstable or changing dynamically, you can implement a retry mechanism to reattempt locating the element.
+
+Example:
+
+```java
+public void clickElement(By locator) {
+    int attempts = 0;
+    while (attempts < 3) {
+        try {
+            driver.findElement(locator).click();
+            break;
+        } catch (StaleElementReferenceException e) {
+            attempts++;
+        }
+    }
+}
+```
