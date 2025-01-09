@@ -1,4 +1,5 @@
-1. Scenarios Where finally Block Can Be Skipped
+### 1. **Scenarios Where finally Block Can Be Skipped**
+ 
 When the JVM Terminates Abruptly
 If the Java Virtual Machine (JVM) is forcibly terminated (e.g., using System.exit()), the finally block will not execute.
 
