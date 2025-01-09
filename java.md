@@ -2,7 +2,8 @@
 ## Table of Contents
 1. [Scenarios Where finally Block Can Be Skipped](#1-can-finally-block-can-skip)
 2. [Class and Object](#2-class-and-object)
-3. [Abstract](#1-abstract)
+3. [Abstract](#3-abstract)
+4. [Encapsulation](#4-encapsulation)
 ### 1. **Scenarios Where finally Block Can Be Skipped**
  
 When the JVM Terminates Abruptly
@@ -82,3 +83,8 @@ public class Test {
     }
 }
 ```
+### 4. **Encapsulation**
+Key Points of Encapsulation in Java:
+**Private Fields:** Fields (variables) of a class are made private so that they cannot be accessed directly from outside the class.
+**Public Getter and Setter Methods:** Public methods (getters and setters) are provided to access and update the values of the private fields in a controlled way.
+**Control:** Encapsulation allows you to enforce rules and constraints on how data is set or retrieved. For example, a setter method could ensure that only valid values are assigned to an object's fields.
