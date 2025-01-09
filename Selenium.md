@@ -15,7 +15,7 @@ driver.get("https://letcode.in/dropdowns");
         ));
         option.click();
 ```
-### 2. *Exception**
+### 2. **Exception**
 Selenium provides a wide range of exceptions to handle different scenarios that can occur during the execution of automated tests. Here’s a list of common exceptions in Selenium and their explanations:
 
 ### A. **NoSuchElementException**
@@ -116,7 +116,7 @@ The page being refreshed.
 Elements being dynamically updated or re-rendered.
 Navigation to a new page or frame.
 **solution**
-A. Relocate the Element
+**A. Relocate the Element**
 When the DOM changes, the reference to the element becomes stale. To fix this, locate the element again before interacting with it.
 
 Example:
@@ -131,7 +131,7 @@ try {
     element.click();
 }
 ```
-B. Use a WebDriverWait
+**B. Use a WebDriverWait**
 Using WebDriverWait ensures that the element is re-located or is in a stable state before interacting with it.
 
 Example:
@@ -145,7 +145,7 @@ WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.i
 element.click();
 ```
 
-C. Handle with Retry Logic
+**C. Handle with Retry Logic**
 If you suspect the DOM is unstable or changing dynamically, you can implement a retry mechanism to reattempt locating the element.
 
 Example:
@@ -180,7 +180,7 @@ public class Test {
 }
 ```
 ### 5) **Java8 features**
-**A. Lambda Expressions **
+**A. Lambda Expressions**
 
 Lambda expressions allow you to write concise implementations of functional interfaces. 
 
@@ -196,7 +196,7 @@ names.forEach(name -> System.out.println(name));
 
  
 
-**B. Functional Interfaces **
+**B. Functional Interfaces**
 
 Java 8 introduced several new functional interfaces in the java.util.function package, such as Predicate, Function, and Consumer. 
 
@@ -212,7 +212,7 @@ System.out.println(isEven.test(4)); // true
 
  
 
- **C. Streams API  **
+ **C. Streams API**
 
 Streams provide a functional-style way to process collections of data. 
 
@@ -231,7 +231,7 @@ System.out.println(filteredNames); // [Alice]
 ```
  
 
- **D. Default and Static Methods in Interfaces  **
+ **D. Default and Static Methods in Interfaces**
 
 Interfaces can now have methods with default or static implementations. 
 
@@ -252,7 +252,7 @@ interface Vehicle {
 ```
  
 
- **E. Optional  **
+ **E. Optional**
 
 The Optional class is a container that helps avoid NullPointerException. 
 
@@ -266,7 +266,7 @@ System.out.println(name.orElse("Default Name")); // Default Name
 
  ```
 
- **F. Method References  **
+ **F. Method References**
 
 Method references are a shorthand for lambda expressions. 
 
@@ -281,7 +281,7 @@ names.forEach(System.out::println); // Method reference
 
  
 
- **G. Collectors  **
+ **G. Collectors**
 
 The Collectors class provides reduction operations for streams, such as grouping, joining, and averaging. 
 
@@ -295,7 +295,7 @@ String joinedNames = names.stream().collect(Collectors.joining(", "));
 System.out.println(joinedNames); // Alice, Bob, Charlie 
  ```
 
- **H. Parallel Streams  **
+ **H. Parallel Streams**
 
 Streams can be executed in parallel for faster processing on multi-core processors. 
 
@@ -310,7 +310,7 @@ System.out.println(sum); // 15
 ```
  
 
- **I. Base64 Encoding and Decoding  **
+ **I. Base64 Encoding and Decoding**
 
 The java.util.Base64 class provides Base64 encoding and decoding. 
 
