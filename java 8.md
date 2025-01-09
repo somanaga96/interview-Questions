@@ -16,8 +16,7 @@ names.forEach(name -> System.out.println(name));
  
 
 **B. Functional Interfaces**
-
-Java 8 introduced several new functional interfaces in the java.util.function package, such as Predicate, Function, and Consumer. 
+Interface that contains exactly one abstract method is known as functional interface
 
 Example: 
 
