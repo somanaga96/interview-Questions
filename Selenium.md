@@ -15,7 +15,7 @@ driver.get("https://letcode.in/dropdowns");
         ));
         option.click();
 ```
-2)  Exception
+### 2. *Exception**
 Selenium provides a wide range of exceptions to handle different scenarios that can occur during the execution of automated tests. Here’s a list of common exceptions in Selenium and their explanations:
 
 ### A. **NoSuchElementException**
@@ -110,7 +110,7 @@ try {
 }
 ```
 
-### 2) **how to overcome stale element exception in selenium java**
+### 3) **how to overcome stale element exception in selenium java**
 **occurs when**
 The page being refreshed.
 Elements being dynamically updated or re-rendered.
