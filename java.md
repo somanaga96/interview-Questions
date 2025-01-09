@@ -30,9 +30,11 @@ A class that is declared with the abstract keyword is known as an abstract class
 It can have abstract and non-abstract methods (method with the body).
 
 **Ways to achieve Abstraction**
-1.There are two ways to achieve abstraction in Java:
-2.Using Abstract Class (0 to 100%)
-3.Using Interface (100%
+
+
+1. There are two ways to achieve abstraction in Java:
+2. Using Abstract Class (0 to 100%)
+3. Using Interface (100%
 
 Example :
 ```java
