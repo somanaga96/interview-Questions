@@ -162,11 +162,34 @@ String decoded = new String(Base64.getDecoder().decode(encoded));
 System.out.println(decoded); // Java8 
 ```
   **J. Flat Map**
+  Solution 1
 ```java 
   public class Test {
     public static void main(String[] args) {
         List<List<Integer>> num = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));
         num.stream().flatMap(Collection::stream).forEach(x -> System.out.print(x + " "));
+    }
+}
+//output
+//1 2 3 4
+```
+Solution 2
+```java 
+  public class Test {
+    public static void main(String[] args) {
+        List<List<Integer>> num = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));
+        num.stream().flatMap(Listn::stream).forEach(x -> System.out.print(x + " "));
+    }
+}
+//output
+//1 2 3 4
+```
+Solution 3
+```java 
+  public class Test {
+    public static void main(String[] args) {
+        List<List<Integer>> num = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));
+        num.stream().flatMap(list->list.stream).forEach(x -> System.out.print(x + " "));
     }
 }
 //output
