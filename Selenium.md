@@ -1,6 +1,7 @@
 1)Select the option without Select Class
 
 Ans : 
+```java
 driver.get("https://letcode.in/dropdowns");
         WebElement state = driver.findElement(By.cssSelector("select#fruits"));
         state.click();
@@ -9,6 +10,7 @@ driver.get("https://letcode.in/dropdowns");
                 By.xpath("//option[text()='Banana']")
         ));
         option.click();
+```
 2)  Exception
 Selenium provides a wide range of exceptions to handle different scenarios that can occur during the execution of automated tests. Here’s a list of common exceptions in Selenium and their explanations:
 
