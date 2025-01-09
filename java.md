@@ -55,3 +55,30 @@ public static void main(String args[]){
 }
 ```
 
+### 4. **DownCast and UpCast**
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal animal = new Dog();  // Upcasting
+
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;  // Safe downcasting
+            dog.sound();  // Output: Dog barks
+        } else {
+            System.out.println("Not a Dog");
+        }
+    }
+}
+```
