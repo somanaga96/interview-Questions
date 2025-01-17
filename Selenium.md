@@ -56,14 +56,6 @@ Selenium provides a wide range of exceptions to handle different scenarios that 
    - **Description**: The base exception class in Selenium. It is thrown when something goes wrong with the WebDriver.
    - **Example**: Issues with the driver or communication between the browser and Selenium.
 
-### J. **SessionNotFoundException**
-   - **Description**: Thrown when the WebDriver session is not found or is invalid.
-   - **Example**: Trying to use a session after the browser has been closed.
-
-### K. **MoveTargetOutOfBoundsException**
-   - **Description**: Thrown when attempting to move the mouse to an element that is outside the viewport.
-   - **Example**: Using the `Actions` class to move to an element that is not within the visible area.
-
 ### L. **UnhandledAlertException**
    - **Description**: Thrown when there is an unexpected alert on the page and it has not been handled.
    - **Example**: If an alert appears unexpectedly during execution and the script doesn’t handle it.
@@ -71,10 +63,6 @@ Selenium provides a wide range of exceptions to handle different scenarios that 
 ### M. **JavascriptException**
    - **Description**: Thrown when there is an issue with JavaScript execution.
    - **Example**: Running a `JavascriptExecutor` script that contains an error.
-
-### N. **NotFoundException**
-   - **Description**: A generic exception class for not found exceptions (used as a superclass for more specific exceptions like `NoSuchElementException`, `NoSuchFrameException`, etc.).
-   - **Example**: Attempting to locate an element that doesn’t exist.
 
 ### O. **InvalidArgumentException**
    - **Description**: Thrown when an invalid argument is passed to a method.
@@ -178,4 +166,23 @@ public class Test {
         //rest of the code
     }
 }
+```
+### 5) **parameterized xpath in selenium**
+```cucumber
+@When("^I click the \"([^\"]*)\" button$")
+public void clickButton(String buttonName) {
+    String dynamicXpath = String.format("//button[text()='%s']", buttonName);
+    WebElement button = driver.findElement(By.xpath(dynamicXpath));
+    button.click();
+}
+// Parameterized XPath
+String dynamicXpath = "//button[text()='%s']";
+String buttonName = "Submit";
+
+// Use String.format to replace %s with the actual value
+String finalXpath = String.format(dynamicXpath, buttonName);
+
+// Find the element using the dynamic XPath
+WebElement button = driver.findElement(By.xpath(finalXpath));
+button.click();
 ```
