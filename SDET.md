@@ -1,3 +1,6 @@
+## Table of Contents
+1. [Smoke Test](#1-smoke-test)
+2. [Common Selenium Exceptions](#2-common-selenium-exceptions)
 
 ### 1.**Smoke Testing**
 Purpose: To check whether the major functionalities of the application are working properly after a new build is deployed.
