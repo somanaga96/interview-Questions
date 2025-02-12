@@ -1,6 +1,6 @@
 https://www.cricbuzz.com/### 
 1)  **Single slash vs double slash**  
-     **A. Single slash**  
+       **A. Single slash**  
         - **Absolute XPath**  
         - **Fixed path from root**  
         ```java
