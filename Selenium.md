@@ -6,7 +6,7 @@
 
 Ans : 
 ```java
-driver.get("https://letcode.in/dropdowns");
+        driver.get("https://letcode.in/dropdowns");
         WebElement state = driver.findElement(By.cssSelector("select#fruits"));
         state.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
