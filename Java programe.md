@@ -72,7 +72,7 @@ public class App {
 //output
 //[2, 3, 5]
 ```
-**C. Duplicate printing**
+**C. Unique printing**
 ```java
 //I-Java 8
 
