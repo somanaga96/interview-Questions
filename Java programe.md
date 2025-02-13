@@ -22,14 +22,13 @@ public class Main {
     }
 }
 ```
-### 2) **Duplicate and NonDuplicate printing**
+### 2) **Duplicate and NonDuplicate and Unique printing**
 **A. Duplicate printing**
 ```java
 public class App {
     public static void main(String[] args) {
         List<Integer> nums = Arrays.asList(1, 1, 2, 3, 4, 0, 1, 5, 4, 0, 1);
         List<Integer> ans = new ArrayList<>();
-//        nums.stream().distinct().forEach(System.out::println); //java8
         for (int i = 0; i < nums.size(); i++) {
             int count = 0;
 
@@ -55,7 +54,6 @@ public class App {
     public static void main(String[] args) {
         List<Integer> nums = Arrays.asList(1, 1, 2, 3, 4, 0, 1, 5, 4, 0, 1);
         List<Integer> ans = new ArrayList<>();
-//        nums.stream().distinct().forEach(System.out::println); //java8
         for (int i = 0; i < nums.size(); i++) {
             int count = 0;
 
@@ -73,4 +71,32 @@ public class App {
 }
 //output
 //[2, 3, 5]
+```
+**C. Duplicate printing**
+```java
+//I-Java 8
+
+public class App {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(1, 1, 2, 3, 4, 0, 1, 5, 4, 0, 1);
+        nums.stream().distinct().forEach(System.out::println);
+    }
+}
+//output
+//[1, 2, 3, 4, 0, 5]
+
+//II-brute force
+public class App {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(1, 1, 2, 3, 4, 0, 1, 5, 4, 0, 1);
+        for (int i = 0; i < nums.size(); i++) {
+            if (!ans.contains(nums.get(i))) {
+                ans.add(nums.get(i));
+            }
+        }
+        System.out.println(ans);
+    }
+}
+//output
+//[1, 2, 3, 4, 0, 5]
 ```
