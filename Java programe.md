@@ -100,3 +100,12 @@ public class App {
 //output
 //[1, 2, 3, 4, 0, 5]
 ```
+### 3) **To find the second MAX**
+  **A. Java8**
+```java
+  Optional<Integer> first = nums.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst();
+```
+  **B. Brute force**
+```java
+  Optional<Integer> first = nums.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst();
+```
