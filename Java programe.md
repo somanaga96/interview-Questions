@@ -107,5 +107,19 @@ public class App {
 ```
   **B. Brute force**
 ```java
-  Optional<Integer> first = nums.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst();
+public class App {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(1, 4, 6, 8, 19, 2);
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+        for (int n : nums) {
+            if (n > max) {
+                secondMax = max;
+                max = n;
+            } else if (n > secondMax && n < max) {
+                secondMax = n;
+            }
+        }
+    }
+}
 ```
