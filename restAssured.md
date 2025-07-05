@@ -42,6 +42,7 @@ response.then().time(lessThan(2000L)); // Response time should be less than 2 se
 **Extracting a Single Value**
 ```java
 String value = response.then().extract().path("key");
+token = (String) response.then().extract().path("token");
 ```
 **Extracting an Entire JSON Object**
 
