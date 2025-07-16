@@ -58,6 +58,38 @@ to use above you have to use either GSON or JACKSON library
     <version>2.10.1</version> <!-- Use the latest version -->
 </dependency>
 ```
+```java
+package org.example;
+
+import com.google.gson.Gson;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Map;
+
+public class Main {
+    @Test(priority = 1)
+    public void addUser() throws IOException {
+        FileReader fileReader = new FileReader("src/test/resources/user.json");
+        Gson gson = new Gson();
+        Map<?, ?> jsonMap = gson.fromJson(fileReader, Map.class); // Read JSON as a map
+        String json = gson.toJson(jsonMap); // Convert back to string
+        fileReader.close();
+
+        RestAssured.baseURI = "http://localhost:8080";
+        Response post = RestAssured.given().log().all()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .body(json)
+                .post("/api/auth/register");
+
+        System.out.println("Response: " + post.asPrettyString());
+    }
+}
+```
 ```pom
 **JACKSON**
 <dependency>
@@ -65,7 +97,35 @@ to use above you have to use either GSON or JACKSON library
     <artifactId>jackson-databind</artifactId>
     <version>2.15.2</version> <!-- Use the latest version -->
 </dependency>
+```
+```java
+package org.example;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.testng.annotations.Test;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Map;
+
+
+public class Main {
+    @Test(priority = 1)
+    public void addUser() throws IOException {
+        FileReader fileReader = new FileReader("src/test/resources/user.json");
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        // Convert JSON to Map<String, Object>
+        Map<String, Object> userMap = objectMapper.readValue(fileReader, Map.class);
+        RestAssured.baseURI = "http://localhost:8080";
+        Response post = RestAssured.given().log().all()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .body(userMap).post("/api/auth/register");
+        System.out.println("Response :" + post.asPrettyString());
+    }
+}
 ```
 
 ### 9. **Validation Using Custom Matchers**
