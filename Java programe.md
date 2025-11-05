@@ -123,3 +123,47 @@ public class App {
     }
 }
 ```
+### 4) **Ascending order based on digit**
+  **A. Java8**
+```java
+  import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(123, 10, 3, 123);
+
+        // Sort ascending by number of digits
+        nums.sort(Comparator.comparingInt(n -> String.valueOf(n).length()));
+
+        System.out.println(nums);
+    }
+}
+
+```
+  **B. Brute force**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> nums = new ArrayList<>(Arrays.asList(123, 10, 3, 123));
+
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
+                // Compare by digit length
+                int len1 = String.valueOf(nums.get(i)).length();
+                int len2 = String.valueOf(nums.get(j)).length();
+
+                // Swap if out of order (ascending by digit length)
+                if (len1 > len2) {
+                    int temp = nums.get(i);
+                    nums.set(i, nums.get(j));
+                    nums.set(j, temp);
+                }
+            }
+        }
+
+        System.out.println(nums);
+    }
+}
+```
