@@ -167,3 +167,130 @@ public class Main {
     }
 }
 ```
+### 4) **Reverse Sring**
+**A. DSA**
+```java
+String original = "Hello";
+char[] charArray = original.toCharArray();
+
+int left = 0;
+int right = charArray.length - 1;
+
+while (left < right) {
+    // Swap characters at left and right pointers
+    char temp = charArray[left];
+    charArray[left] = charArray[right];
+    charArray[right] = temp;
+    
+    left++;
+    right--;
+}
+
+String reversed = new String(charArray);
+System.out.println(reversed); // Output: olleH
+```
+**B. Recursion**
+```java
+public class App {
+    public static void main(String[] args) {
+
+        System.out.println(reverse("soma"));
+    }
+    public static String reverse(String text) {
+        if (text == null || text.length() <= 1) {
+            return text;
+        }
+
+        return reverse(text.substring(1)) + text.charAt(0);
+    }
+}
+```
+How it works
+
+This line calls the method:
+
+reverse("soma")
+
+Inside the method:
+
+if (text == null || text.length() <= 1) {
+    return text;
+}
+
+This is the base condition.
+
+It stops recursion when:
+
+the string is null, or
+the string has only one character.
+
+Without this condition, the method would keep calling itself and eventually cause a StackOverflowError.
+
+Main recursive logic
+return reverse(text.substring(1)) + text.charAt(0);
+
+This does two things:
+
+text.substring(1)
+
+removes the first character.
+
+For "soma":
+
+text.substring(1) = "oma"
+
+And:
+
+text.charAt(0)
+
+gets the first character.
+
+text.charAt(0) = 's'
+
+So the method becomes:
+
+reverse("oma") + 's'
+Step-by-step execution
+reverse("soma")
+= reverse("oma") + "s"
+
+Then:
+
+reverse("oma")
+= reverse("ma") + "o"
+
+Then:
+
+reverse("ma")
+= reverse("a") + "m"
+
+Now:
+
+reverse("a")
+
+The string length is 1, so the base condition returns:
+
+"a"
+
+Now the recursive calls start returning in reverse order.
+
+reverse("ma")
+= "a" + "m"
+= "am"
+reverse("oma")
+= "am" + "o"
+= "amo"
+reverse("soma")
+= "amo" + "s"
+= "amos"
+Call stack view
+```java
+reverse("soma")
+    reverse("oma")
+        reverse("ma")
+            reverse("a")
+            returns "a"
+        returns "am"
+    returns "amo"
+returns "amos"
+```
