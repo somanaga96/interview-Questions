@@ -5,6 +5,8 @@
 3. [Abstract](#3-abstract)
 4. [DOwnCast and UpCast](#4-Downcast-UpCast)
 5. [Encapsulation](#5-encapsulation)
+6. [Wrapper](#5-wrapper)
+7. [Strings](#5-Strings)
 ### 1. **Scenarios Where finally Block Can Be Skipped**
  
 When the JVM Terminates Abruptly
@@ -147,3 +149,91 @@ System.out.println(x.equals(y)); // true
 Use equals() when comparing wrapper-class values.
 
 Wrapper Classes Can Store null
+### 6. **Strings**
+**1. Ways to Create a String**
+Using a string literal
+```java
+String first = "Java";
+```
+Using the new keyword
+```java
+String second = new String("Java");
+```
+
+Both contain the same text, but their memory behaviour is different.
+
+**2. String Pool**
+
+Java maintains a special memory area called the String Constant Pool.
+```java
+String first = "Java";
+String second = "Java";
+```
+Java checks whether "Java" already exists in the string pool.
+
+Because it exists, both references point to the same object.
+
+first ───┐
+         ├──> "Java"
+second ──┘
+
+Therefore:
+```java
+System.out.println(first == second);
+
+Output:
+true
+```
+**3. String Created Using new**
+```java
+String first = "Java";
+String second = new String("Java");
+```
+Here:
+
+first refers to the pooled string
+second refers to a new object in heap memory
+System.out.println(first == second);
+
+Output:
+
+false
+
+But:
+```java
+System.out.println(first.equals(second));
+
+Output:
+
+true
+```
+**4. == vs equals()**
+
+This is a very common interview question.
+
+==
+
+For objects, == compares references.
+
+It checks whether both variables point to the same object.
+```java
+String first = new String("Java");
+String second = new String("Java");
+
+System.out.println(first == second);
+```
+Output:
+
+false
+**equals()**
+
+equals() compares the string content.
+
+System.out.println(first.equals(second));
+
+Output:
+
+true
+Interview answer
+
+== compares object references, while equals() compares the actual string content.
